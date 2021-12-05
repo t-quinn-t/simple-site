@@ -1,0 +1,10 @@
+/* @author Quinn Tao */
+/* @last updated on Dec 4, 2022 */
+
+.timeline-card-container {
+    box-sizing: border-box;
+    
+    max-width: 300px;
+    
+    border: red solid 1px;
+}
