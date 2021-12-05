@@ -5,12 +5,10 @@ import React from 'react';
 
 
 /**
- * A Portfolio Component that takes in a dictionary
- *   where the key is a DateRange object, and
- *   the value is TimeLineData object
+ * A Portfolio Component that relies on timelineData.json to render 
  */
 function TimelinePortfolio(props) {
-
+    
 }
 
 export default TimelinePortfolio;
