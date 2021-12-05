@@ -3,8 +3,9 @@
 
 function App() {
     return ( 
-        <div className = "App" >
-            
+        <div className="main-canvas">
+            <div className="hero-container"></div>
+            <div className="portfolio-container"></div> 
         </div>
     );
 }
