@@ -57,7 +57,17 @@ function _renderDescription(description) {
 
 // @returns rendered tech tags in array form
 function _renderTags(tags) {
-    return null; // stub
+    return (
+        <div className="timeline-card-tags-row">
+            {
+                tags.map((tag, index) => {
+                    return (
+                        <p className="timeline-card-tags" key={index}>{tag}</p>
+                    )
+                })
+            }
+        </div>
+    )
 }
 
 // @returns links in <a> form with specific icons
