@@ -16,6 +16,7 @@ function TimelinePortfolio(props) {
             brief="A simple personal static portfolio website built with React"
             tags={["React", "Javascript", "CSS", "HTML"]}
             demolink="https://ggbond.com"
+            sourcelink="https://ggbond.com"
         ></TimelineCard>
     );
 }

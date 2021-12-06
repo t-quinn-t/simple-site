@@ -1,6 +1,7 @@
 /* @author Quinn Tao */
 /* @last updated on Dec 4, 2022 */
 
+/* ================== Container ================= */ 
 .timeline-card-container {
     position: relative;
     box-sizing: border-box;
@@ -27,20 +28,28 @@
     color: gray;
 }
 
+/* ================== Brief ================= */ 
+.timeline-card-brief {
+    color:grey;
+    font-size: 12px;
+}
+
+/* ================== Tags  ================= */ 
 .timeline-card-tags {
     display: inline;
     position: relative;
-    margin: 10px;
+    margin: 6px;
 
     padding: 3px;
     border-radius: 2px;
     font-size: 10px;
     background-color: #feac14;
 }
+/* This is to make the first tag align */
 .timeline-card-tags:nth-child(1) {
     margin-left: 0;
 }
-
+/* Before and After renders the little dot */
 .timeline-card-tags::before {
     content: "  ";
     display: inline-block;
@@ -49,7 +58,6 @@
     font-size: 10px;
     background-color: #feac14;
 }
-
 .timeline-card-tags::after {
     content: " ";
     position: absolute;
@@ -61,4 +69,27 @@
     padding: 2px;
     font-size: 10px;
     background-color: rgb(73, 73, 73);
+}
+
+/* ================== Link ================= */ 
+.timeline-card-links-container {
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.timeline-card-links-container div {
+    margin: 10px 0 10px 0;
+}
+/* This seperates the icon and text */
+.timeline-card-links-container a {
+    margin-left: 5px;
+    color:rgb(73, 73, 73);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.timeline-card-links-container i {
+    width: 10px;
+    color:rgb(73, 73, 73);
+    font-size: 10px;
 }

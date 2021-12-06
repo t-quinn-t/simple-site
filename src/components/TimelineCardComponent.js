@@ -34,14 +34,21 @@ TimelineCard.propTypes = {
     demolink:       function(props, propname) {return _simpleHttpsVerifier(props[propname])},
     sourcelink:     function(props, propname) {return _simpleHttpsVerifier(props[propname])}
 }
+
 /* ============================= Helper Functions =============================== */
-// Very simple HTTP Url checker, may be expanded later ...
+
+/**
+ * Very simple HTTP Url checker, may be expanded later ...
+ */
 function _simpleHttpsVerifier(input) {
     if (input != null && !(/https:\/\/.*/.test(input))) {
         return new Error("Not a valid https URL");
     } 
 }
 
+/**
+ * @returns a time widget floating on the top left corner
+ */
 function _renderTime(initdate, termdate) {
     return (
         <div className="timeline-card-time-container">
@@ -50,12 +57,16 @@ function _renderTime(initdate, termdate) {
     )
 }
 
-// @returns description list in <li> form
+/**
+ * @returns description list in <li> form
+ */
 function _renderDescription(description) {
     return null; // stub
 }
 
-// @returns rendered tech tags in array form
+/**
+ * @returns a list of in line styled tech tags
+ */
 function _renderTags(tags) {
     return (
         <div className="timeline-card-tags-row">
@@ -70,9 +81,22 @@ function _renderTags(tags) {
     )
 }
 
-// @returns links in <a> form with specific icons
+/**
+ * @returns links in <a> form with specific icons
+ */ 
 function _renderLinks(demolink, sourcelink) {
-    return null; // stub
+    return (
+        <div className="timeline-card-links-container">
+            <div>
+                <i class="fas fa-link"></i>
+                <a href={demolink}>{demolink}</a>
+            </div>
+            <div>
+                <i class="fas fa-code"></i>
+                <a href={sourcelink}>{sourcelink}</a>
+            </div>
+        </div>
+    );
 }
 
 export default TimelineCard;
