@@ -1,7 +1,7 @@
 // @author Quinn Tao
 // @last update on Dec 4, 2021
 
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import "../style/TimelineCardStyle.css";
 
@@ -9,15 +9,33 @@ import "../style/TimelineCardStyle.css";
  * A Card that renders details of a timeline event
  */
 function TimelineCard(props) {
+
+    const [cardToggleFlag, setCardToggleFlag] = useState(false); // false when folded;
+
     return(
         <div className="timeline-card-container">
-            {_renderTime(props.initdate, props.termdate)}
             <h1 className="timeline-card-title">{props.title ? props.title : "Unamed Project"}</h1>
-            {props.brief ? <p className="timeline-card-brief">{props.brief}</p> : null}
-            {props.organization ? <p className="timeline-card-organization">{props.organization}</p> : null}
-            {_renderTags(props.tags)}
-            {_renderDescription(props.description)}
-            {_renderLinks(props.demolink, props.sourcelink)}
+            {_renderTime(props.initdate, props.termdate)}
+            {
+                cardToggleFlag ? (
+                    <div>
+                        {props.brief ? <p className="timeline-card-brief">{props.brief}</p> : null}
+                        {props.organization ? <p className="timeline-card-organization">{props.organization}</p> : null}
+                        <hr></hr>
+                        {_renderTags(props.tags)}
+                        <hr></hr>
+                        {_renderDescription(props.description)}
+                        <hr></hr>
+                        {_renderLinks(props.demolink, props.sourcelink)}
+                        
+                    </div>
+                ) : null
+            }
+            <div className="timeline-card-toggler">
+                <button id="toggler-btn" onClick={()=>setCardToggleFlag(!cardToggleFlag)}>{
+                    cardToggleFlag ? "Show less" : "Learn more"
+                }</button>
+            </div>
         </div>
     );
 }
@@ -61,7 +79,15 @@ function _renderTime(initdate, termdate) {
  * @returns description list in <li> form
  */
 function _renderDescription(description) {
-    return null; // stub
+    return (
+        <ul className="timeline-card-description-container">
+            {description.map((description, index) => {
+                return (
+                    <li key={index}>{description}</li>
+                )
+            })}
+        </ul>
+    );
 }
 
 /**
@@ -88,11 +114,11 @@ function _renderLinks(demolink, sourcelink) {
     return (
         <div className="timeline-card-links-container">
             <div>
-                <i class="fas fa-link"></i>
+                <i className="fas fa-link"></i>
                 <a href={demolink}>{demolink}</a>
             </div>
             <div>
-                <i class="fas fa-code"></i>
+                <i className="fas fa-code"></i>
                 <a href={sourcelink}>{sourcelink}</a>
             </div>
         </div>

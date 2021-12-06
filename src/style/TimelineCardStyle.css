@@ -1,6 +1,14 @@
 /* @author Quinn Tao */
 /* @last updated on Dec 4, 2022 */
 
+hr { 
+    border-color: #ddd;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: 15px 0 15px 0;
+}
+
 /* ================== Container ================= */ 
 .timeline-card-container {
     position: relative;
@@ -8,8 +16,12 @@
     max-width: 300px;
     padding: 20px;
 
-    box-shadow: 0 0 6px 1px gray;
+    box-shadow: 0 0 6px 1px rgb(201, 199, 199);
     border-radius: 6px;
+}
+
+.timeline-card-container * {
+    transition: ease-in-out 0.2s;
 }
 
 .timeline-card-time-container p, h1 {
@@ -70,26 +82,44 @@
     font-size: 10px;
     background-color: rgb(73, 73, 73);
 }
-
+/* ================== Description ================= */ 
+.timeline-card-description-container {
+    padding-left: 20px;
+    font-size: 12px;
+}
 /* ================== Link ================= */ 
 .timeline-card-links-container {
     box-sizing: border-box;
     padding: 5px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .timeline-card-links-container div {
-    margin: 10px 0 10px 0;
+    margin: 3px 0 4px 0;
 }
 /* This seperates the icon and text */
 .timeline-card-links-container a {
     margin-left: 5px;
-    color:rgb(73, 73, 73);
+    color:rgb(160, 157, 157);
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .timeline-card-links-container i {
     width: 10px;
     color:rgb(73, 73, 73);
-    font-size: 10px;
+    font-size: 8px;
+}
+
+/* ============= Toggle Btn =============== */ 
+.timeline-card-toggler {
+    margin-top: 10px;
+}
+#toggler-btn {
+    border: none;
+    border-radius: 3px;
+    background-color: #feac14;
+}
+
+#toggler-btn:hover {
+    transform: scale(1.1);
 }

@@ -15,6 +15,7 @@ function TimelinePortfolio(props) {
             termdate="Present"
             brief="A simple personal static portfolio website built with React"
             tags={["React", "Javascript", "CSS", "HTML"]}
+            description={["This is a simple website", "Built with React JS in a weekend!"]}
             demolink="https://ggbond.com"
             sourcelink="https://ggbond.com"
         ></TimelineCard>
