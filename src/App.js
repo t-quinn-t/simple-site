@@ -5,14 +5,30 @@ import React from 'react';
 import TimelinePortfolio from "./components/TimelinePortfolioComponent";
 
 function App() {
+
+     
+
     return ( 
         <div className="main-canvas">
             <div className="hero-container"></div>
             <div className="portfolio-container">
-                <TimelinePortfolio /> 
+                {initTimeline()}
             </div> 
             <div className="footer-container"></div>
         </div>
+    );
+}
+
+function initTimeline() {
+
+    const timelineTopTime = Date.now();
+    const timelineBottomTime = new Date(2018, 1, 1);
+    const timelineLength = (timelineTopTime - timelineBottomTime)/1000/60/60/24*2;
+    
+    return (
+        <TimelinePortfolio 
+            length={timelineLength}
+        />
     );
 }
 

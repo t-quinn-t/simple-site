@@ -3,22 +3,19 @@
 
 import React from 'react';
 import TimelineCard from './TimelineCardComponent';
+import "../style/TimelinePortfolioStyle.css";
 
 /**
- * A Portfolio Component that relies on timelineData.json to render 
+ * A Portfolio Component that renders a scrollable timeline
+ * The timeline card data should be provided through props
  */
 function TimelinePortfolio(props) {
     return (
-        <TimelineCard 
-            title="This Website"
-            initdate="Dec 4"
-            termdate="Present"
-            brief="A simple personal static portfolio website built with React"
-            tags={["React", "Javascript", "CSS", "HTML"]}
-            description={["This is a simple website", "Built with React JS in a weekend!"]}
-            demolink="https://ggbond.com"
-            sourcelink="https://ggbond.com"
-        ></TimelineCard>
+        <div className="timeline-container">
+            <div className="linebody" style={{
+                height: props.length
+            }}></div>
+        </div>
     );
 }
 
