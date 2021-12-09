@@ -3,6 +3,8 @@
 
 import React from 'react';
 import TimelinePortfolio from "./components/TimelinePortfolioComponent";
+import * as timelineData from "./data.json";
+import CONST from './util';
 
 function App() {
 
@@ -21,10 +23,13 @@ function App() {
 
 function initTimeline() {
 
-    const timelineTopTime = Date.now();
-    const timelineBottomTime = new Date(2018, 1, 1);
-    const timelineLength = (timelineTopTime - timelineBottomTime)/1000/60/60/24*2;
+    const timelineTopTime       = Date.now();
+    const timelineBottomTime    = new Date(2018, 1, 1);
+    const projDataArr           = timelineData.projects;
+    const expDataArr            = timelineData.experience;
     
+    const timelineLength = (timelineTopTime - timelineBottomTime)/1000/60/60/24*CONST.DATE_TO_PIXEL_MULTIPLIER;
+    console.log(projDataArr[0])
     return (
         <TimelinePortfolio 
             length={timelineLength}
