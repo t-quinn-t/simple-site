@@ -6,4 +6,5 @@ const CONST = {
     PAGE_HERO_HEIGHT: 300
 }
 
+
 export default CONST;

@@ -8,8 +8,6 @@ import CONST from './util';
 
 function App() {
 
-     
-
     return ( 
         <div className="main-canvas">
             <div className="hero-container"></div>
@@ -27,11 +25,31 @@ function initTimeline() {
     const timelineBottomTime    = new Date(2018, 1, 1);
     const projDataArr           = timelineData.projects;
     const expDataArr            = timelineData.experience;
+
+    let data = [
+        {
+            termdate: 22,
+            initdate: 45
+        }, 
+        {
+            termdate: 14,
+            initdate: 50
+        },
+        {
+            termdate: 244,
+            initdate: 455
+        },
+        {
+            termdate: 323,
+            initdate: 377
+        }
+    ]
     
     const timelineLength = (timelineTopTime - timelineBottomTime)/1000/60/60/24*CONST.DATE_TO_PIXEL_MULTIPLIER;
     return (
         <TimelinePortfolio 
             length={timelineLength}
+            data={data}
         />
     );
 }
