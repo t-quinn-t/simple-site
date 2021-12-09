@@ -29,7 +29,6 @@ function initTimeline() {
     const expDataArr            = timelineData.experience;
     
     const timelineLength = (timelineTopTime - timelineBottomTime)/1000/60/60/24*CONST.DATE_TO_PIXEL_MULTIPLIER;
-    console.log(projDataArr[0])
     return (
         <TimelinePortfolio 
             length={timelineLength}
