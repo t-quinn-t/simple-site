@@ -2,16 +2,35 @@
     "projects": [
         {
             "title": "This site",
-            "initdate": "12/04/2022",
+            "initdate": "12/04/2021",
             "termdate": "Present",
             "brief":"A simple personal static portfolio website built with React",
             "tags":["React", "Javascript", "CSS", "HTML"],
             "description":["This is a simple website", "Built with React JS in a weekend!"],
             "demolink":"https://ggbond.com",
             "sourcelink":"https://ggbond.com"
+        },
+        {
+            "title": "Simple ChatApp",
+            "initdate": "07/01/2021",
+            "termdate": "Present",
+            "brief": "A simple chatroom application built with Spring(backend) and React(frontend)",
+            "tags": ["React","Javascript", "CSS", "JSX", "Web Socket", "STOMP.js", "Spring Boot", "JWT", "PostgreSQL", "Maven", "JDBC"],
+            "demolink":"https://bondgg.com",
+            "sourcelink":"https://src.com"
         }
     ], 
     "experience": [
-
+        {
+            "title": "Change Healthcare Software Tester Co-op",
+            "initdate": "05/03/2021",
+            "termdate": "Present",
+            "brief": "Software tester on ChangeHealthcare Workflow Intelligence Team",
+            "tags": ["Manual Testing", "SQL", "Virtual Machine"],
+            "description":[
+                "Manually execute test cases according to testing plan",
+                "Debug with SQL Management Studio"
+            ]
+        }
     ]
 }

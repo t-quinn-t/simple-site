@@ -38,37 +38,42 @@ function TimelinePortfolio(props) {
         if (upperInitdate > 0 && window.scrollY < upperInitdate) {
             // When scrolling up, append next started card;
             middlePoolRef.current.unshift(upperPoolRef.current.pop());
-            setTimelineCardPool(middlePoolRef.current);
+            setTimelineCardPool([...middlePoolRef.current]);
             return;
         }
         let lowerInitdate = middlePoolRef.current.length <= 0 ? 0 : middlePoolRef.current[0].initdate;
         if (lowerInitdate > 0 && window.scrollY > lowerInitdate) {
             // When scrolling down, remove unstarted card;
             upperPoolRef.current.push(middlePoolRef.current.shift());
-            setTimelineCardPool(middlePoolRef.current);
+            setTimelineCardPool([...middlePoolRef.current]);
             return;
         }
         let upperTermdate = middlePoolRef.current.length <= 0 ? 0 : middlePoolRef.current[middlePoolRef.current.length-1].termdate;
         if (upperTermdate > 0 && window.scrollY+CONST.PAGE_HERO_HEIGHT < upperTermdate) {
             // When scrolling up, remove finished card;
             lowerPoolRef.current.unshift(middlePoolRef.current.pop());
-            setTimelineCardPool(middlePoolRef.current);
+            setTimelineCardPool([...middlePoolRef.current]);
             return;
         }
         let lowerTermdate = lowerPoolRef.current.length <= 0 ? CONST.PAGE_HERO_HEIGHT : lowerPoolRef.current[0].termdate;
         if (lowerTermdate > CONST.PAGE_HERO_HEIGHT && window.scrollY+CONST.PAGE_HERO_HEIGHT > lowerTermdate) {
             // When scrolling down, append next unfinished card;
             middlePoolRef.current.push(lowerPoolRef.current.shift());
-            setTimelineCardPool(middlePoolRef.current);
+            setTimelineCardPool([...middlePoolRef.current]);
         }
-        
     }
 
     return (
         <div className="timeline-container">
+            <div>
+                {timelineCardPool.map((x,id) => {
+                    return (<div key={id}>{x.termdate}</div>)
+                })}
+            </div>
             <div className="linebody" style={{
                 height: props.length
             }}></div>
+            
         </div>
     );
 }
