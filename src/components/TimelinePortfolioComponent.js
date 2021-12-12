@@ -74,15 +74,37 @@ function TimelinePortfolio(props) {
         )
     }
 
+    function renderLine(totalHeight) {
+        const blockHeight = CONST.DATE_TO_PIXEL_MULTIPLIER * 30.5;
+        let month = new Date(Date.now());
+        const options = {year: "numeric", month: "short"}
+        
+        let blocks = [];
+        while (totalHeight > 0) {
+            month = month - 1000 * 60 * 60 * 24 * 30.5;
+            let monthStr = new Intl.DateTimeFormat('en-GB', options).format(month)
+            blocks.push(
+                <div className='timeline-block' key={totalHeight}
+                style={{"height": blockHeight}}>
+                    {monthStr}
+                </div>
+            );
+            totalHeight-= blockHeight;
+        }
+        return (
+            <div className='timeline-body'>
+                {blocks}
+            </div>
+        )
+    }
+
     return (
         <div className="timeline-container">
+            {renderLine(props.totalheight)}   
             <div className='timeline-cardpool-container'>
                 {timelineCardPool.map((carddata, index) => renderCardPool(carddata, index))}
             </div>
-            <div className="linebody" style={{
-                height: props.length
-            }}></div>
-            
+                    
         </div>
     );
 }

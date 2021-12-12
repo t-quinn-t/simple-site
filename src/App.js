@@ -54,7 +54,7 @@ function initTimeline() {
     const timelineLength = (timelineTopTime - timelineBottomTime)/1000/60/60/24*CONST.DATE_TO_PIXEL_MULTIPLIER;
     return (
         <TimelinePortfolio 
-            length={timelineLength}
+            totalheight={timelineLength}
             data={data}
         />
     );

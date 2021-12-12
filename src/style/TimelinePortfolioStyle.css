@@ -1,16 +1,27 @@
 /* @author Quinn Tao  */
 /* @last updated on Dec 6 */
 
-.linebody {
-    width: 10px;
-    height: 100px;
-    background-color: black;
+.timeline-body {
+    display: inline;
+    width: 200px;
+}
+.timeline-block {
+    width: 100px;
+}
+.timeline-block::after {
+    content: " ";
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    margin-left: 100px;
+    background-color: rgb(133, 75, 75);
 }
 
 /* ================ Timeline Container ===================== */ 
 .timeline-cardpool-container {
-    position:fixed;
+    /* position:fixed; */
+    display: inline;
     top: 20px;
-    left: 20px;
+    left: 120px;
     box-sizing: border-box;
 }
