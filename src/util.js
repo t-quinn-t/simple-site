@@ -3,7 +3,9 @@
 
 const CONST = {
     DATE_TO_PIXEL_MULTIPLIER: 2,
-    PAGE_HERO_HEIGHT: 300
+    PAGE_HERO_HEIGHT: 300, 
+    timelineTopTime: Date.now(),
+    timelineBottomTime: new Date(2018, 1, 1)
 }
 
 

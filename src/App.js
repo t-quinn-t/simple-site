@@ -19,32 +19,38 @@ function App() {
     );
 }
 
+/**
+ * This function reads data.js and feeds data to timeline
+ * @returns rendered timeline   
+ */
 function initTimeline() {
 
-    const timelineTopTime       = Date.now();
-    const timelineBottomTime    = new Date(2018, 1, 1);
-    const projDataArr           = timelineData.projects;
-    const expDataArr            = timelineData.experience;
+    const timelineTopTime       = CONST.timelineTopTime;
+    const timelineBottomTime    = CONST.timelineBottomTime;
 
-    let data = [
-        {
-            termdate: 22,
-            initdate: 45
-        }, 
-        {
-            termdate: 14,
-            initdate: 50
-        },
-        {
-            termdate: 244,
-            initdate: 455
-        },
-        {
-            termdate: 323,
-            initdate: 377
+    let data = timelineData.raw;
+
+    // Modify elements in data by appending additional properties
+    //  "initdateDepth", "termdateDepth". These are pixel depth from top converted 
+    //  from dates
+    data.forEach(element => {
+        let rawdate = element.termdate;
+        if (rawdate === 'Present') {
+            element['termdateDepth'] = 0;
+        } else {
+            let date = new Date(rawdate);
+            let p = (CONST.timelineTopTime - date)/1000/60/60/24*CONST.DATE_TO_PIXEL_MULTIPLIER;
+            element['termdateDepth'] = p;
         }
-    ]
-    
+        rawdate = element.initdate;
+        if (rawdate === 'Present') {
+            element['initdateDepth'] = 0;
+        }
+        let date = new Date(rawdate);
+        let p = (CONST.timelineTopTime - date)/1000/60/60/24*CONST.DATE_TO_PIXEL_MULTIPLIER;
+        element['initdateDepth'] = p;
+    })
+   
     const timelineLength = (timelineTopTime - timelineBottomTime)/1000/60/60/24*CONST.DATE_TO_PIXEL_MULTIPLIER;
     return (
         <TimelinePortfolio 

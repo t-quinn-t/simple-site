@@ -15,6 +15,7 @@ hr {
     box-sizing: border-box;
     max-width: 300px;
     padding: 20px;
+    margin: 20px;
 
     box-shadow: 0 0 6px 1px rgb(201, 199, 199);
     border-radius: 6px;

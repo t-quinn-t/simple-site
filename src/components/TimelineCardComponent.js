@@ -79,6 +79,7 @@ function _renderTime(initdate, termdate) {
  * @returns description list in <li> form
  */
 function _renderDescription(description) {
+    if (description === undefined || description === null) return null;
     return (
         <ul className="timeline-card-description-container">
             {description.map((description, index) => {
