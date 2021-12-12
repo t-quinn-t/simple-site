@@ -1,9 +1,11 @@
 /* @author Quinn Tao  */
 /* @last updated on Dec 6 */
 
+.timeline-container {
+    display: flex;
+}
 .timeline-body {
-    display: inline;
-    width: 200px;
+    display: inline-block;
 }
 .timeline-block {
     width: 100px;
@@ -20,8 +22,13 @@
 /* ================ Timeline Container ===================== */ 
 .timeline-cardpool-container {
     /* position:fixed; */
-    display: inline;
+    display: inline-block;
     top: 20px;
     left: 120px;
     box-sizing: border-box;
+}
+
+/* This is fixed position class for timeline card pool */
+.fixed {
+    position: fixed;
 }

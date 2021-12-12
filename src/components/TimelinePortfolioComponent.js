@@ -13,6 +13,8 @@ import CONST from '../util';
 function TimelinePortfolio(props) {
 
     const [timelineCardPool, setTimelineCardPool] = useState([]);
+    const [timelineCardClassname, setTimelineCardClassname] = useState(""); 
+    let timelineCardClassnameUpdateBit = 0;
     
     let upperPoolRef = useRef([]);
     let middlePoolRef = useRef([]);
@@ -30,9 +32,17 @@ function TimelinePortfolio(props) {
         return () => {
             window.removeEventListener("scroll", handleTimelineScroll);
         }
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    function handleTimelineScroll(event) {
+    function handleTimelineScroll(event) {    
+        if (window.scrollY > CONST.PAGE_HERO_HEIGHT && timelineCardClassnameUpdateBit === 0) {
+            setTimelineCardClassname("fixed");
+            timelineCardClassnameUpdateBit = 1;
+        } else if (window.scrollY < CONST.PAGE_HERO_HEIGHT && timelineCardClassnameUpdateBit === 1) {
+            setTimelineCardClassname("");
+            timelineCardClassnameUpdateBit = 0;
+        }
+
         let upperInitdate = upperPoolRef.current.length <= 0 ? 0 : upperPoolRef.current[upperPoolRef.current.length-1].initdateDepth;
         if (upperInitdate > 0 && window.scrollY < upperInitdate) {
             // When scrolling up, append next started card;
@@ -60,7 +70,6 @@ function TimelinePortfolio(props) {
             middlePoolRef.current.push(lowerPoolRef.current.shift());
             setTimelineCardPool([...middlePoolRef.current]);
         }
-        console.log(middlePoolRef.current)
     }
 
     function renderCardPool(carddata, index) {
@@ -101,7 +110,7 @@ function TimelinePortfolio(props) {
     return (
         <div className="timeline-container">
             {renderLine(props.totalheight)}   
-            <div className='timeline-cardpool-container'>
+            <div className={'timeline-cardpool-container ' + timelineCardClassname}>
                 {timelineCardPool.map((carddata, index) => renderCardPool(carddata, index))}
             </div>
                     

@@ -10,7 +10,9 @@ function App() {
 
     return ( 
         <div className="main-canvas">
-            <div className="hero-container"></div>
+            <div className="hero-container" style={{height: 300}}>
+                wlala
+            </div>
             <div className="portfolio-container">
                 {initTimeline()}
             </div> 

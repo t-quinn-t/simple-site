@@ -13,7 +13,7 @@ function TimelineCard(props) {
     const [cardToggleFlag, setCardToggleFlag] = useState(false); // false when folded;
 
     return(
-        <div className="timeline-card-container">
+        <div className={"timeline-card-container"}>
             <h1 className="timeline-card-title">{props.title ? props.title : "Unamed Project"}</h1>
             {_renderTime(props.initdate, props.termdate)}
             {
