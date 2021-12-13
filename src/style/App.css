@@ -1,0 +1,22 @@
+/* @author Quinn Tao */
+/* @last updated on Dec 12, 2021 */
+.hero-container {
+    background-color: #222;
+    color: white;
+    padding: 20px 20% 0 200px;
+}
+
+.terminal-line {
+    font-family: 'Courier New', Courier, monospace;
+}
+.terminal-line span {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(48, 175, 133)
+}
+.hero-container h1 {
+    font-size: 40px;
+}
+.hero-container p {
+    text-align: left;
+}
+
