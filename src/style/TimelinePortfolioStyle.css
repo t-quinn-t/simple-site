@@ -3,20 +3,28 @@
 
 .timeline-container {
     display: flex;
+    margin-left: 100px;
 }
 .timeline-body {
     display: inline-block;
+    
 }
 .timeline-block {
-    width: 100px;
+    width: 140px;
+    height: 0;
+    position: relative;
+    font-size: 24px;
 }
+
 .timeline-block::after {
     content: " ";
     display: inline-block;
-    width: 1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px;
     height: 100%;
-    margin-left: 100px;
-    background-color: rgb(133, 75, 75);
+    background-color: rgb(204, 204, 204);
 }
 
 /* ================ Timeline Container ===================== */ 
@@ -24,7 +32,7 @@
     /* position:fixed; */
     display: inline-block;
     top: 20px;
-    left: 120px;
+    left: 248px;
     box-sizing: border-box;
 }
 

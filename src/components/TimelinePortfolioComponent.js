@@ -28,7 +28,6 @@ function TimelinePortfolio(props) {
             middlePoolRef.current.push(lowerPoolRef.current.shift());
         }
         setTimelineCardPool(middlePoolRef.current);
-        console.log(lowerPoolRef.current)
         return () => {
             window.removeEventListener("scroll", handleTimelineScroll);
         }
@@ -89,9 +88,15 @@ function TimelinePortfolio(props) {
         const options = {year: "numeric", month: "short"}
         
         let blocks = [];
+        let count  = 0;
         while (totalHeight > 0) {
+            let monthStr = " ";
+            if (count === 3) {
+                monthStr = new Intl.DateTimeFormat('en-GB', options).format(month)
+                count = 0;
+            } 
             month = month - 1000 * 60 * 60 * 24 * 30.5;
-            let monthStr = new Intl.DateTimeFormat('en-GB', options).format(month)
+            
             blocks.push(
                 <div className='timeline-block' key={totalHeight}
                 style={{"height": blockHeight}}>
@@ -99,6 +104,7 @@ function TimelinePortfolio(props) {
                 </div>
             );
             totalHeight-= blockHeight;
+            ++count;
         }
         return (
             <div className='timeline-body'>
