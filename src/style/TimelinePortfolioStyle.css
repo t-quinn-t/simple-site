@@ -32,8 +32,16 @@
     /* position:fixed; */
     display: inline-block;
     top: 20px;
-    left: 248px;
     box-sizing: border-box;
+    width: 340px;
+}
+
+.project {
+    left: 248px;
+}
+
+.work {
+    left: 588px;
 }
 
 /* This is fixed position class for timeline card pool */

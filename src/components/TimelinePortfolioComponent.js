@@ -59,7 +59,7 @@ function TimelinePortfolio(props) {
             setTimelineCardPool([...middlePoolRef.current]);
             return;
         }
-        
+
         let upperTermdate = middlePoolRef.current.length <= 0 ? 0 : middlePoolRef.current[middlePoolRef.current.length-1].termdateDepth;
         if (upperTermdate > 0 && window.scrollY+CONST.PAGE_HERO_HEIGHT < upperTermdate) {
             // When scrolling up, remove finished card;
@@ -76,18 +76,21 @@ function TimelinePortfolio(props) {
         }
     }
 
-    function renderCardPool(carddata, index) {
-        return (
-            <TimelineCard key={index}
-            title={carddata.title}
-            brief={carddata.brief}
-            initdate={carddata.initdate}
-            termdate={carddata.termdate}
-            description={carddata.description}
-            demolink={carddata.demolink}
-            sourcelink={carddata.sourcelink}
-            tags={carddata.tags} />
-        )
+    function renderCardPool(carddata, index, type) {
+        if (carddata.type === type) {
+            return (
+                <TimelineCard key={index}
+                title={carddata.title}
+                brief={carddata.brief}
+                initdate={carddata.initdate}
+                termdate={carddata.termdate}
+                description={carddata.description}
+                demolink={carddata.demolink}
+                sourcelink={carddata.sourcelink}
+                tags={carddata.tags} />
+            )
+        }
+        return null;
     }
 
     function renderLine(totalHeight) {
@@ -124,8 +127,15 @@ function TimelinePortfolio(props) {
     return (
         <div className="timeline-container">
             {renderLine(props.totalheight)}   
-            <div className={'timeline-cardpool-container ' + timelineCardClassname}>
-                {timelineCardPool.map((carddata, index) => renderCardPool(carddata, index))}
+            
+            <div className={'timeline-cardpool-container project ' + timelineCardClassname}>
+                <h1 className='timeline-column-header'>Project</h1>
+                {timelineCardPool.map((carddata, index) => renderCardPool(carddata, index, "project"))}
+            </div>
+
+            <div className={'timeline-cardpool-container work ' + timelineCardClassname}>
+                <h1 className='timeline-column-header'>Work</h1>
+                {timelineCardPool.map((carddata, index) => renderCardPool(carddata, index, "work"))}
             </div>
                     
         </div>

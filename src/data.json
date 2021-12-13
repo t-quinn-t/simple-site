@@ -8,7 +8,8 @@
             "tags":["React", "Javascript", "CSS", "HTML"],
             "description":["This is a simple website", "Built with React JS in a weekend!"],
             "demolink":"https://ggbond.com",
-            "sourcelink":"https://github.com/t-quinn-t/simple-site"
+            "sourcelink":"https://github.com/t-quinn-t/simple-site",
+            "type":"project"
         },
         {
             "title": "Simple ChatApp",
@@ -17,7 +18,8 @@
             "brief": "A simple chatroom application built with Spring(backend) and React(frontend)",
             "tags": ["React","Javascript", "CSS", "JSX", "Web Socket", "STOMP.js", "Spring Boot", "JWT", "PostgreSQL", "Maven", "JDBC"],
             "demolink":"https://bondgg.com",
-            "sourcelink":"https://github.com/t-quinn-t/Simple-ChatApp"
+            "sourcelink":"https://github.com/t-quinn-t/Simple-ChatApp",
+            "type": "project"
         },
         {
             "title": "Change Healthcare Software Tester Co-op",
@@ -28,7 +30,8 @@
             "description":[
                 "Manually execute test cases according to testing plan",
                 "Debug with SQL Management Studio"
-            ]
+            ],
+            "type":"work"
         },
         {
             "title": "iOS Frontend Dev @ GameOfApps",
@@ -51,7 +54,7 @@
             "type": "work"
         },
         {
-            "title": "UBC TA for CPSC221 2020Winter1",
+            "title": "UBC TA for CPSC221 2020Winter2",
             "initdate": "2021-01-05",
             "termdate": "2021-04-25",
             "brief": "UBC Teacher Assitant for CPSC 221 (Intro Data Structure and Algorithms)",

@@ -20,10 +20,12 @@ hr {
     box-shadow: 0 0 6px 1px rgb(201, 199, 199);
     border-radius: 6px;
 }
-
-.timeline-card-container * {
-    transition: ease-in-out 0.2s;
+.timeline-column-header{
+    text-align: center;
+    font-size: 40px;
+    margin: auto;
 }
+
 
 .timeline-card-time-container p, h1 {
     margin: 0px;
