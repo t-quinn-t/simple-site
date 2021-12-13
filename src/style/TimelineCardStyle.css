@@ -117,12 +117,12 @@ hr {
 .timeline-card-toggler {
     margin-top: 10px;
 }
-#toggler-btn {
+.toggler-btn {
     border: none;
     border-radius: 3px;
     background-color: rgb(48, 175, 133);
 }
 
-#toggler-btn:hover {
+.toggler-btn:hover {
     transform: scale(1.1);
 }

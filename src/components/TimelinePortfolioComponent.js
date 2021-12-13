@@ -11,7 +11,7 @@ import CONST from '../util';
  * The timeline card data should be provided through props
  */
 function TimelinePortfolio(props) {
-    
+    // console.log(props.data)
     const [timelineCardPool, setTimelineCardPool] = useState([]);
     const [timelineCardClassname, setTimelineCardClassname] = useState(""); 
     let timelineCardClassnameUpdateBit = 0;
@@ -61,15 +61,15 @@ function TimelinePortfolio(props) {
         }
 
         let upperTermdate = middlePoolRef.current.length <= 0 ? 0 : middlePoolRef.current[middlePoolRef.current.length-1].termdateDepth;
-        if (upperTermdate > 0 && window.scrollY+CONST.PAGE_HERO_HEIGHT < upperTermdate) {
+        if (upperTermdate > 0 && window.scrollY < upperTermdate) {
             // When scrolling up, remove finished card;
             lowerPoolRef.current.unshift(middlePoolRef.current.pop());
             setTimelineCardPool([...middlePoolRef.current]);
             return;
         }
 
-        let lowerTermdate = lowerPoolRef.current.length <= 0 ? CONST.PAGE_HERO_HEIGHT : lowerPoolRef.current[0].termdateDepth;
-        if (lowerTermdate > CONST.PAGE_HERO_HEIGHT && window.scrollY+CONST.PAGE_HERO_HEIGHT > lowerTermdate) {
+        let lowerTermdate = lowerPoolRef.current.length <= 0 ? 0 : lowerPoolRef.current[0].termdateDepth;
+        if (lowerTermdate > 0 && window.scrollY > lowerTermdate) {
             // When scrolling down, append next unfinished card;
             middlePoolRef.current.push(lowerPoolRef.current.shift());
             setTimelineCardPool([...middlePoolRef.current]);

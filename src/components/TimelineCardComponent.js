@@ -32,7 +32,7 @@ function TimelineCard(props) {
                 ) : null
             }
             <div className="timeline-card-toggler">
-                <button id="toggler-btn" onClick={()=>setCardToggleFlag(!cardToggleFlag)}>{
+                <button className="toggler-btn" onClick={()=>setCardToggleFlag(!cardToggleFlag)}>{
                     cardToggleFlag ? "Show less" : "Learn more"
                 }</button>
             </div>
@@ -79,7 +79,6 @@ function _renderTime(initdate, termdate) {
  * @returns description list in <li> form
  */
 function _renderDescription(description) {
-    console.log(description)
     if (description === undefined || description === null) return null;
     return (
         <ul className="timeline-card-description-container">
