@@ -1,5 +1,5 @@
 /* @author Quinn Tao */
-/* @last updated on Dec 4, 2022 */
+/* @last updated on Dec 12, 2022 */
 
 hr { 
     border-color: #ddd;
@@ -56,7 +56,7 @@ hr {
     padding: 3px;
     border-radius: 2px;
     font-size: 10px;
-    background-color: #feac14;
+    background-color: rgb(48, 175, 133);
 }
 /* This is to make the first tag align */
 .timeline-card-tags:nth-child(1) {
@@ -69,7 +69,7 @@ hr {
     width: 8px;
     border-radius: 2px;
     font-size: 10px;
-    background-color: #feac14;
+    background-color: rgb(48, 175, 133);
 }
 .timeline-card-tags::after {
     content: " ";
@@ -118,7 +118,7 @@ hr {
 #toggler-btn {
     border: none;
     border-radius: 3px;
-    background-color: #feac14;
+    background-color: rgb(48, 175, 133);
 }
 
 #toggler-btn:hover {

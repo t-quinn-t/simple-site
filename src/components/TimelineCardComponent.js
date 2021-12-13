@@ -1,5 +1,5 @@
 // @author Quinn Tao
-// @last update on Dec 4, 2021
+// @last update on Dec 12, 2021
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -79,6 +79,7 @@ function _renderTime(initdate, termdate) {
  * @returns description list in <li> form
  */
 function _renderDescription(description) {
+    console.log(description)
     if (description === undefined || description === null) return null;
     return (
         <ul className="timeline-card-description-container">

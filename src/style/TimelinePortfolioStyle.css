@@ -1,5 +1,5 @@
 /* @author Quinn Tao  */
-/* @last updated on Dec 6 */
+/* @last updated on Dec 12 */
 
 .timeline-container {
     display: flex;
@@ -24,7 +24,7 @@
     right: 0;
     width: 12px;
     height: 100%;
-    background-color: rgb(204, 204, 204);
+    background-color: rgb(61, 61, 61);
 }
 
 /* ================ Timeline Container ===================== */ 

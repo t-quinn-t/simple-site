@@ -8,7 +8,7 @@
             "tags":["React", "Javascript", "CSS", "HTML"],
             "description":["This is a simple website", "Built with React JS in a weekend!"],
             "demolink":"https://ggbond.com",
-            "sourcelink":"https://ggbond.com"
+            "sourcelink":"https://github.com/t-quinn-t/simple-site"
         },
         {
             "title": "Simple ChatApp",
@@ -17,7 +17,7 @@
             "brief": "A simple chatroom application built with Spring(backend) and React(frontend)",
             "tags": ["React","Javascript", "CSS", "JSX", "Web Socket", "STOMP.js", "Spring Boot", "JWT", "PostgreSQL", "Maven", "JDBC"],
             "demolink":"https://bondgg.com",
-            "sourcelink":"https://src.com"
+            "sourcelink":"https://github.com/t-quinn-t/Simple-ChatApp"
         },
         {
             "title": "Change Healthcare Software Tester Co-op",
@@ -29,6 +29,38 @@
                 "Manually execute test cases according to testing plan",
                 "Debug with SQL Management Studio"
             ]
+        },
+        {
+            "title": "iOS Frontend Dev @ GameOfApps",
+            "initdate": "2019-07-01",
+            "termdate": "2019-08-30",
+            "brief": "iOS front-end development",
+            "tags": ["iOS", "XCode", "Swift4"],
+            "description": ["Built and implement iOS front end app"],
+            "type": "work"
+        },
+        {
+            "title": "UBC TA for CPSC221 2020Winter1",
+            "initdate": "2020-09-05",
+            "termdate": "2020-12-20",
+            "brief": "UBC Teacher Assitant for CPSC 221 (Intro Data Structure and Algorithms)",
+            "tags": ["C++", "Python", "Mustache", "Javascript", "PrairieLearn"],
+            "description": ["Holding Labs with a partner TA on zoom",
+            "Holding Office Hours alone on zoom",
+            "Volunteer working as an Examlet TA: helping out organizing examlets on PraireLearn, a learning platform used in this course."],
+            "type": "work"
+        },
+        {
+            "title": "UBC TA for CPSC221 2020Winter1",
+            "initdate": "2021-01-05",
+            "termdate": "2021-04-25",
+            "brief": "UBC Teacher Assitant for CPSC 221 (Intro Data Structure and Algorithms)",
+            "tags": ["C++", "Python", "Mustache", "Javascript", "PrairieLearn"],
+            "description": ["Holding Labs with a partner TA on zoom",
+                "Holding Office Hours alone on zoom",
+                "Volunteer working as an Lecture TA: helping out in online lectures -- answering student questions in zoom chat",
+                "Volunteer working on a new Prairelearn element -- Tree Drawer"],
+            "type": "work"
         }
     ]
 }

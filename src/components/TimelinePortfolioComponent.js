@@ -1,5 +1,5 @@
 // @author Quinn Tao
-// @last update on Dec 4, 2021
+// @last update on Dec 12, 2021
 
 import React, {useEffect, useRef, useState} from 'react';
 import TimelineCard from './TimelineCardComponent';
@@ -11,7 +11,7 @@ import CONST from '../util';
  * The timeline card data should be provided through props
  */
 function TimelinePortfolio(props) {
-
+    
     const [timelineCardPool, setTimelineCardPool] = useState([]);
     const [timelineCardClassname, setTimelineCardClassname] = useState(""); 
     let timelineCardClassnameUpdateBit = 0;
@@ -19,7 +19,6 @@ function TimelinePortfolio(props) {
     let upperPoolRef = useRef([]);
     let middlePoolRef = useRef([]);
     let lowerPoolRef = useRef(props.data);
-
     // Bind page scroll event 
     useEffect(() => {
         window.addEventListener("scroll", handleTimelineScroll);
@@ -33,7 +32,9 @@ function TimelinePortfolio(props) {
         }
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    function handleTimelineScroll(event) {    
+    function handleTimelineScroll(event) {   
+        
+        // Toggle between fixed/flex state 
         if (window.scrollY > CONST.PAGE_HERO_HEIGHT && timelineCardClassnameUpdateBit === 0) {
             setTimelineCardClassname("fixed");
             timelineCardClassnameUpdateBit = 1;
@@ -42,6 +43,7 @@ function TimelinePortfolio(props) {
             timelineCardClassnameUpdateBit = 0;
         }
 
+        // Update card pool upon scrolling
         let upperInitdate = upperPoolRef.current.length <= 0 ? 0 : upperPoolRef.current[upperPoolRef.current.length-1].initdateDepth;
         if (upperInitdate > 0 && window.scrollY < upperInitdate) {
             // When scrolling up, append next started card;
@@ -49,6 +51,7 @@ function TimelinePortfolio(props) {
             setTimelineCardPool([...middlePoolRef.current]);
             return;
         }
+
         let lowerInitdate = middlePoolRef.current.length <= 0 ? 0 : middlePoolRef.current[0].initdateDepth;
         if (lowerInitdate > 0 && window.scrollY > lowerInitdate) {
             // When scrolling down, remove unstarted card;
@@ -56,6 +59,7 @@ function TimelinePortfolio(props) {
             setTimelineCardPool([...middlePoolRef.current]);
             return;
         }
+        
         let upperTermdate = middlePoolRef.current.length <= 0 ? 0 : middlePoolRef.current[middlePoolRef.current.length-1].termdateDepth;
         if (upperTermdate > 0 && window.scrollY+CONST.PAGE_HERO_HEIGHT < upperTermdate) {
             // When scrolling up, remove finished card;
@@ -63,6 +67,7 @@ function TimelinePortfolio(props) {
             setTimelineCardPool([...middlePoolRef.current]);
             return;
         }
+
         let lowerTermdate = lowerPoolRef.current.length <= 0 ? CONST.PAGE_HERO_HEIGHT : lowerPoolRef.current[0].termdateDepth;
         if (lowerTermdate > CONST.PAGE_HERO_HEIGHT && window.scrollY+CONST.PAGE_HERO_HEIGHT > lowerTermdate) {
             // When scrolling down, append next unfinished card;
@@ -78,6 +83,9 @@ function TimelinePortfolio(props) {
             brief={carddata.brief}
             initdate={carddata.initdate}
             termdate={carddata.termdate}
+            description={carddata.description}
+            demolink={carddata.demolink}
+            sourcelink={carddata.sourcelink}
             tags={carddata.tags} />
         )
     }
