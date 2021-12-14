@@ -1,9 +1,10 @@
 /* @author Quinn Tao */
-/* @last updated on Dec 12, 2021 */
-.hero-container {
+/* @last updated on Dec 14, 2021 */
+.hero-container, .footer-container {
     background-color: #222;
     color: white;
     padding: 20px 20% 0 200px;
+    height: 300px;
 }
 
 .terminal-line {
@@ -18,5 +19,9 @@
 }
 .hero-container p {
     text-align: left;
+}
+
+.footer-container a {
+    color:rgb(48, 175, 133);
 }
 
